@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于世界杯的记忆与故事</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', '宋体', serif;
+            background-color: #f7f2e9;
+            color: #2e2b28;
+            line-height: 1.75;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 820px;
+            width: 100%;
+            background: #fdfaf5;
+            padding: 2.5rem 2.2rem;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(60, 45, 30, 0.07);
+            transition: all 0.2s ease;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .container {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+        }
+
+        /* 开场短句 */
+        .opening-line {
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #4b3f34;
+            border-left: 6px solid #c9b79c;
+            padding-left: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .opening-line small {
+            display: block;
+            font-size: 1rem;
+            color: #8b7b6b;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            font-size: 1.08rem;
+            margin-bottom: 2rem;
+            text-indent: 2em;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-text a {
+            color: #7f6b55;
+            text-decoration: none;
+            border-bottom: 1px dashed #b7a48b;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .intro-text a:hover {
+            color: #3d3229;
+            border-bottom: 1px solid #7f6b55;
+        }
+
+        /* 引用块 */
+        .pull-quote {
+            background: #efe9df;
+            padding: 1.8rem 2rem;
+            border-radius: 24px 8px 24px 8px;
+            margin: 2.2rem 0;
+            position: relative;
+            font-style: italic;
+            color: #3f352d;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .pull-quote::before {
+            content: "“";
+            font-size: 4rem;
+            position: absolute;
+            left: 0.8rem;
+            top: 0.2rem;
+            color: #c0ae96;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .pull-quote p {
+            margin-left: 2.2rem;
+            font-size: 1.12rem;
+        }
+
+        .pull-quote .source {
+            display: block;
+            text-align: right;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #7e6f60;
+            margin-top: 0.8rem;
+            margin-right: 0.3rem;
+        }
+
+        /* 特点列表 —— 温和卡片式 */
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .feature-list li {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            padding: 1.2rem 1.5rem;
+            border-radius: 30px 8px 30px 8px;
+            box-shadow: 0 2px 6px rgba(100, 80, 60, 0.05);
+            border-left: 5px solid #dac9b4;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .feature-list li:hover {
+            background: #fffcf7;
+            border-left-color: #b49e81;
+        }
+
+        .feature-list strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #4b3d30;
+            font-weight: 600;
+        }
+
+        .feature-list span {
+            font-size: 0.98rem;
+            color: #595049;
+        }
+
+        /* 提示框（温和） */
+        .info-box {
+            background: #ede6db;
+            border-radius: 40px 12px 40px 12px;
+            padding: 1.6rem 2rem;
+            margin: 2.5rem 0 1.8rem;
+            border: 1px solid #ddd3c4;
+        }
+
+        .info-box p {
+            margin-bottom: 0.5rem;
+            font-size: 1.02rem;
+        }
+
+        .info-box .label {
+            font-weight: 600;
+            color: #5d4d3b;
+            letter-spacing: 0.5px;
+        }
+
+        /* 温和结尾 */
+        .gentle-ending {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 2px dotted #d6cbbe;
+            font-size: 1.02rem;
+            color: #51473c;
+            text-align: center;
+            line-height: 1.9;
+        }
+
+        .gentle-ending a {
+            color: #7f6b55;
+            text-decoration: none;
+            border-bottom: 1px solid #b7a48b;
+        }
+
+        .gentle-ending a:hover {
+            color: #2f281f;
+            border-bottom: 1px solid #7f6b55;
+        }
+
+        .gentle-ending .ending-sig {
+            display: block;
+            margin-top: 1.2rem;
+            font-size: 0.95rem;
+            color: #9b8b7a;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            .opening-line {
+                font-size: 1.5rem;
+                padding-left: 1rem;
+            }
+            .pull-quote {
+                padding: 1.4rem 1.2rem;
+            }
+            .feature-list li {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 开场短句 -->
+        <div class="opening-line">
+            四年一度的盛会，聚散之间都有故事。
+            <small>—— 从一场比赛到一代人的记忆</small>
+        </div>
+
+        <!-- 承接段落 -->
+        <div class="intro-text">
+            <p>
+                从南美大陆的街头涂鸦，到欧洲城市的球迷广场，再到亚洲街巷里熬夜看球的年轻人——
+                <a href="https://cns-main-shijiebei.com">世界杯</a>早已不只是体育赛程表上的名字。它更像是一面镜子，照出不同文化如何用各自的方式庆祝同一种激动。
+            </p>
+            <p>
+                很多人第一次认识它，是在邻居家传来的欢呼声里，或是在学校小卖部电视机前围坐的傍晚。那时候并不完全理解越位或阵型，却记住了进球瞬间所有人同时跳起来的画面。那种简单的共鸣，或许就是这项赛事最动人的底色。
+            </p>
+        </div>
+
+        <!-- 引用块 -->
+        <div class="pull-quote">
+            <p>
+                足球是圆的，所以一切皆有可能。而世界杯，就是把这种可能变成集体记忆的容器。
+            </p>
+            <span class="source">—— 某位坐在看台角落的球迷</span>
+        </div>
+
+        <!-- 特点列表（温和卡片式） -->
+        <ul class="feature-list">
+            <li>
+                <strong>跨越时区的陪伴</strong>
+                <span>从凌晨三点的闹钟，到午后重播的集锦，比赛时间或许不便，但那份等待本身成了另一种仪式。</span>
+            </li>
+            <li>
+                <strong>语言之外的交流</strong>
+                <span>不同国籍的球迷并肩坐在一起，用手势、笑容和偶尔蹦出的单词分享同一次叹息或狂喜。</span>
+            </li>
+            <li>
+                <strong>城市里的临时村落</strong>
+                <span>广场上搭起大屏幕，陌生人因为一件球衣或一面旗帜围成小小的群落，散场后又汇入夜色。</span>
+            </li>
+            <li>
+                <strong>老照片般的持久感</strong>
+                <span>很多年后，人们依然记得自己在哪里、和谁一起看完了某场经典对决——记忆的清晰度远超日常。</span>
+            </li>
+        </ul>
+
+        <!-- 温和提示框 -->
+        <div class="info-box">
+            <p><span class="label">一点提醒：</span> 无论支持哪支球队，赛场上下的尊重与友善，往往比胜负留存得更久。不妨在下次比赛日，给身边不同立场的球迷递上一杯水，或一个理解的点头。</p>
+            <p style="margin-top:0.6rem; font-size:0.95rem; color:#6f6255;">—— 毕竟，我们共同拥有的不只是胜负，还有那些围坐在一起的夜晚。</p>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="gentle-ending">
+            <p>
+                如果你也曾为某个瞬间屏住呼吸，或是在散场后独自回味了很久，那么大概能理解：<a href="https://cns-main-shijiebei.com">世界杯</a>不仅仅在球场里发生，它更活在人与人之间的分享里。
+            </p>
+            <p style="margin-top:0.5rem;">
+                下一次比赛来临时，或许可以约上很久没见的朋友，哪怕只是通个电话。
+            </p>
+            <span class="ending-sig">—— 保存那些简单的快乐，便已足够。</span>
+        </div>
+    </div>
+    <!-- 种子标记（仅用于变化，不显示） -->
+</body>
+</html>
